@@ -1,0 +1,47 @@
+<html>
+  
+<head>
+  
+  <title>jQuery</title>
+  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+</head>
+
+<body>
+  
+  <div id="circle"></div>
+
+  <p></p>
+
+  <script>
+  
+  $("#circle").click( function()
+    {
+      $(this).animate({
+        width:"400px", 
+        height:"400px",
+        marginLeft:"200px",
+        marginTop:"200px"
+        }, 2000, function()
+        {
+          $(this).css("background-color", "black");
+        });
+    });
+
+  $.ajax("info.txt")
+  .done(function(data)
+    {
+      alert(data);
+    })
+  .fail(function(){
+    $("p").html("Could not get data");
+  });
+
+  </script>
+
+</body>
+
+</html>  
